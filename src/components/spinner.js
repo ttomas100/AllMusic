@@ -13,9 +13,9 @@ const BackDrop = styled.div`
 `;
 
 const Spinner = styled.div`
-  border: 4px solid #f3f3f3; 
+  border: 10px solid #f3f3f3; 
   border-top: 4px solid ${theme.colors.primary}; 
-  border-radius: 50%;
+  border-radius: 100%;
   width: 120px;
   height: 120px;
   animation: spin 2s linear infinite;

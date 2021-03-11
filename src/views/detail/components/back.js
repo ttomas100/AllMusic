@@ -18,7 +18,7 @@ const Icon = styled(FontAwesomeIcon)`
 const BackButton = (props) => (
   <Back to={props.link}>
     <Icon icon="chevron-left" />
-    Voltar
+    Back
   </Back>
 );
 

@@ -75,14 +75,14 @@ import React, {
                 }
               </List>
               {
-                spotify.list && spotify.list.artists.items.length > 0 && <Title>Artistas</Title>
+                spotify.list && spotify.list.artists.items.length > 0 && <Title>Artist</Title>
               }
               <List>
                 {
                   spotify.list &&
                   spotify.list.artists.items && spotify.list.artists.items.map(a =>
                     <Card key={a.id} title={a.name} images={a.images}/>
-                  )  //<Text>Nenhum artista encontrado</Text>
+                  )  
                 }
               </List>
               {

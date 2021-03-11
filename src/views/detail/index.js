@@ -3,7 +3,6 @@ import React, {
   } from 'react'
   import useAlbum from '../../state/spotify/hooks/useAlbum'
   import useTrack from '../../state/spotify/hooks/useTrack'
-  
   import Container from './containers/container'
   import Content from './components/content'
   import BackButton from './components/back'
@@ -12,7 +11,6 @@ import React, {
   import MusicsList from './components/musicsList'
   import MusicsItem from './components/musicsItem'
   import Player from './containers/player'
-  
   import Spinner from '../../components/spinner'
   
   const Detail = (props) => {
@@ -48,7 +46,7 @@ import React, {
       <Container>
         <Spinner show={isLoading || loading} />
         <Content>
-          <BackButton link='/home'>Voltar</BackButton>
+          <BackButton link='/home'>Back</BackButton>
           {
             spotify.album &&
               <DetailAlbum>

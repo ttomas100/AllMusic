@@ -35,8 +35,8 @@ const Modal = (props) => {
   return (
     <BackDrop>
       <Background>
-        <Message>Token expirado!</Message>
-        <a href={api.server + '/login'}>Gerar novo token!</a>
+        <Message>Token expired!</Message>
+        <a href={api.server + '/login'}>Generate new token!</a>
       </Background>
     </BackDrop>
   )

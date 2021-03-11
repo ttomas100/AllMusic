@@ -2,12 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import LogoImage from '../assets/images/logo.png'
 import theme from './theme'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import { useStateValue } from '../state'
 import { logout } from '../state/auth/actions'
-
 import Button from './button'
 import useProfile from "../state/spotify/hooks/useProfile";
 
@@ -27,14 +24,14 @@ const Right = styled.nav`
 `;
 
 const Logo = styled.img`
-   margin: 0;
-   width: 30px;
+   margin: 40;
+   width: 100px;
 `;
 
 const UserIcon = styled(FontAwesomeIcon)`
   color: ${theme.colors.secondary};
-  font-size: 14px;
-  margin: 0 5px;
+  font-size: 30px;
+  margin: 0 10px;
 `;
 
 const UserName = styled.span`
