@@ -8,7 +8,7 @@ const Button = styled.button`
     font-weight: 300;
     color: ${theme.colors.secondary};
     padding: 9px 13px;
-    margin: 1px;
+    margin: 30px;
     border: none;
     border-radius: 2px;
     cursor: pointer;

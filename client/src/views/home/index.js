@@ -37,6 +37,7 @@ import React, {
       if ( localStorage.getItem(('last_result')) ) {
         setLastSearch(JSON.parse(localStorage.getItem('last_result')));
       }
+   
     }, []);
   
     const handleChange = async (e) => {

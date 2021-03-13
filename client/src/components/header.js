@@ -7,6 +7,8 @@ import { useStateValue } from '../state'
 import { logout } from '../state/auth/actions'
 import Button from './button'
 import useProfile from "../state/spotify/hooks/useProfile";
+import { NavLink } from 'react-router-dom'
+import './profileNavLink.css'
 
 const Nav = styled.div`
   height: 50px;
@@ -28,22 +30,10 @@ const Logo = styled.img`
    width: 100px;
 `;
 
-const UserIcon = styled(FontAwesomeIcon)`
-  color: ${theme.colors.secondary};
-  font-size: 30px;
-  margin: 0 10px;
-`;
-
-const UserName = styled.span`
-  color: ${theme.colors.secondary};
-  font-size: 12px;
-  text-transform: uppercase;
-`;
 
 const Header = (props) => {
   const [{auth}, dispatch] = useStateValue();
-  const [spotify] = useProfile();
-
+ 
   const handleLogout = async () => {
     await dispatch(logout())
   };
@@ -54,10 +44,8 @@ const Header = (props) => {
       {
         auth.logged &&
           <Right>
-            {
-              spotify.user && <UserName>{spotify.user.display_name}</UserName>
-            }
-            <UserIcon icon="user-circle" />
+           <NavLink className = "profileNavLink" activeStyle={{ color: 'white', font: 'bold'}} exact activeClassName="active" to = "/profile">Profile</NavLink>
+       
             <Button primary onClick={() => handleLogout()}>Logout</Button>
           </Right>
       }

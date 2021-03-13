@@ -27,6 +27,7 @@ export const loadProfile = () => {
     .get(api.spotify + '/me')
     .then(res => res.data)
     .catch(err => err.response.data)
+    
 };
 
 export const search = (payload) => {
