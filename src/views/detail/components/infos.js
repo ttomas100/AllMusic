@@ -36,7 +36,7 @@ const AlbumArtist = styled.h2`
 
 const InfoAlbum = (props) => (
   <InfoContent>
-    <AlbumImage src={props.images ? props.images[0].url : 'https://imagens.canaltech.com.br/empresas/698.400.jpg'} alt={props.name} />
+    <AlbumImage src={props.images ? props.images[0].url : 'https://static8.depositphotos.com/1052036/956/v/950/depositphotos_9569803-stock-illustration-grungy-guitar.jpg'} alt={props.name} />
     <AlbumTitle>{props.name}</AlbumTitle>
     {
       props.artists &&

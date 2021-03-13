@@ -1,6 +1,7 @@
 import axios from 'axios'
 import api from './services'
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default function () {
 
   const instance = axios.create({

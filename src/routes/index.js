@@ -11,6 +11,8 @@ import Header from '../components/header'
 import Login from '../views/login'
 import Home from '../views/home'
 import Detail from '../views/detail'
+import Profile from '../views/profile'
+
 
 const Root = props => {
     const initialState = {
@@ -28,6 +30,7 @@ const Root = props => {
                 <Route exact path="/" component={Login} />
                 <PrivateRoute path="/home" component={Home} />
                 <PrivateRoute path="/albums/:artist" component={Detail}/>
+                <PrivateRoute path="/profile" component={Profile}/>
               </Switch>
             </Content>
           </>

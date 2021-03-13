@@ -2,7 +2,7 @@ const colors = {
     primary: '#325229',
     secondary: '#ffffff',
     default: '#191414',
-    background: '#352952',
+    background: '#000000',
     danger: '#bd081c',
     title: '#999999',
     text: '#fafafa'

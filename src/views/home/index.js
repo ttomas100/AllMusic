@@ -88,14 +88,7 @@ import React, {
               {
                 spotify.list && spotify.list.tracks.items.lenght > 0 && <Title>Music</Title>
               }
-              <List>
-                {
-                  spotify.list &&
-                  spotify.list.tracks.items && spotify.list.tracks.items.map(a =>
-                    <Card key={a.id} title={a.name} />
-                  )
-                }
-              </List>
+
             </Results>
           }
           {
