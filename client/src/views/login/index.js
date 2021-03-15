@@ -17,6 +17,7 @@ const Login = (props) => {
     if (auth.logged) {
       props.history.push(from);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [auth]);
 
   return (

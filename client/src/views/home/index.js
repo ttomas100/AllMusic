@@ -37,7 +37,7 @@ import React, {
       if ( localStorage.getItem(('last_result')) ) {
         setLastSearch(JSON.parse(localStorage.getItem('last_result')));
       }
-   
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
   
     const handleChange = async (e) => {

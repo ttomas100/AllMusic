@@ -1,9 +1,7 @@
 import { useState } from 'react'
 import { useStateValue } from '../../index'
 import { loadProfile } from '../queries'
-import {
-  listProfile,
-} from '../actions'
+import { listProfile } from '../actions'
 
 const useProfile = () => {
   const [{spotify}, dispatch] = useStateValue();

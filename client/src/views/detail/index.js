@@ -23,6 +23,7 @@ import React, {
   
     useEffect(() => {
       setAlbum(props.match.params.artist);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
   
     const handlePlayMusic = (trackSelected) => {
@@ -61,7 +62,13 @@ import React, {
               </DetailAlbum>
             }
           {
-            track.music && <Player music={track.music} actual={actualMusic} playing={playing} play={play} volume={volume} onClick={() => handleMusic()} onChange={(e) => handleChangeVolume(e) }/>
+            track.music && <Player music={track.music} 
+                                  actual={actualMusic} 
+                                  playing={playing} 
+                                  play={play} 
+                                  volume={volume} 
+                                  onClick={() => handleMusic()} 
+                                  onChange={(e) => handleChangeVolume(e) }/>
           }
         </Content>
       </Container>

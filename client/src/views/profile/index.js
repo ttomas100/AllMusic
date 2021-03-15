@@ -24,6 +24,7 @@ const Profile = (props) => {
 
   useEffect(() => {
     setAlbum(props.match.params.artist);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handlePlayMusic = (trackSelected) => {

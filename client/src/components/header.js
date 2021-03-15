@@ -2,13 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import LogoImage from '../assets/images/logo.png'
 import theme from './theme'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useStateValue } from '../state'
 import { logout } from '../state/auth/actions'
 import Button from './button'
-import useProfile from "../state/spotify/hooks/useProfile";
 import { NavLink } from 'react-router-dom'
 import './profileNavLink.css'
+
 
 const Nav = styled.div`
   height: 50px;
