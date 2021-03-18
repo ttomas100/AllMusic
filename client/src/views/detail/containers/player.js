@@ -7,12 +7,12 @@ import PlayNow from '../components/player/playNow'
 import SaveButton from '../components/player/saveButton'
 
 const Player = (props) => {
-  const { onClick, onChange, play, volume, playing, actual, save } = props;
+  const { onClick, onChange, play, volume, playing, actual } = props;
   return (
     <Container>
       <PlayNow>Play Now: {actual}</PlayNow>
       <PlayButton onClick={onClick} play={play} />
-      <SaveButton onClick={onClick} save={save} />
+      <SaveButton onClick={onClick} />
       <PlayerRange onChange={(e) => onChange(e)} volume={volume} />
       <ReactPlayer url={playing} playing={play} volume={volume} width="0px" height="0px" />
     </Container>

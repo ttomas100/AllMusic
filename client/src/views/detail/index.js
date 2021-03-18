@@ -12,6 +12,9 @@ import React, {
   import MusicsItem from './components/musicsItem'
   import Player from './containers/player'
   import Spinner from '../../components/spinner'
+
+
+  import { loadPlayers } from '../../api/crudApi'
   
   const Detail = (props) => {
     const [spotify, isLoading, setAlbum] = useAlbum();
@@ -20,9 +23,20 @@ import React, {
     const [volume, setVolume] = useState(0.5);
     const [playing, setPlaying] = useState('');
     const [actualMusic, setActualMusic] = useState('');
-  
+    const [usePlayers, setPlayers] = useState([]);
+
+    const [data, setData] = useState({});
+
+    const getPlayers = async () => {
+      const response = await loadPlayers();
+
+      console.log(response);
+      setPlayers(response);
+    };
+
     useEffect(() => {
       setAlbum(props.match.params.artist);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
   
@@ -36,20 +50,31 @@ import React, {
     };
   
     const handleMusic = () => {
-      console.log(playing)
-      console.log(actualMusic)
-
       setPlay(!play);
+      
     };
   
     const handleChangeVolume = (e) => {
       setVolume(Number(e));
     };
+
+    const handleSave = (e) => {
+      //getPlayers();
+      
+      // setData({
+      //   userId: localStorage.getItem('profile') || null,
+      //   track: actualMusic,
+      //   previewUrl: playing
+      // });
+
+
+    }
   
     return (
       <Container>
         <Spinner show={isLoading || loading} />
         <Content>
+
           <BackButton link='/home'>Back</BackButton>
           {
             spotify.album &&
@@ -63,7 +88,7 @@ import React, {
                 }
                 </MusicsList>
               </DetailAlbum>
-            }
+          }
           {
             track.music && <Player music={track.music} 
                                   actual={actualMusic} 
@@ -73,8 +98,18 @@ import React, {
                                   onClick={() => handleMusic()} 
                                   onChange={(e) => handleChangeVolume(e) }/>
           }
+      
+          {
+            <Player 
+
+              onClick={() => handleSave()} 
+              />
+          }
+
         </Content>
       </Container>
+
+
     )
   };
   
