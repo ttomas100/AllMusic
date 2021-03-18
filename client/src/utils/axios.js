@@ -3,7 +3,7 @@ import api from './services'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function () {
-
+  // Create a basic Axios instance to all requests (this object can be customized before making the call)
   const instance = axios.create({
     baseURL: api.spotify,
     headers: {
@@ -11,7 +11,7 @@ export default function () {
     }
   });
 
-
+  // Insert token on all requests when there is a token in the device storage
   instance.interceptors.request.use(async function (config) {
     const token = localStorage.getItem('access_token');
 

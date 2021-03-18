@@ -14,7 +14,7 @@ import React, {
   import Spinner from '../../components/spinner'
 
 
-  import { loadPlayers } from '../../api/crudApi'
+  import { loadPlayers, postPlayers } from '../../api/crudApi'
   
   const Detail = (props) => {
     const [spotify, isLoading, setAlbum] = useAlbum();
@@ -25,7 +25,7 @@ import React, {
     const [actualMusic, setActualMusic] = useState('');
     const [usePlayers, setPlayers] = useState([]);
 
-    const [data, setData] = useState({});
+    const [useData, setData] = useState({});
 
     const getPlayers = async () => {
       const response = await loadPlayers();
@@ -59,14 +59,18 @@ import React, {
     };
 
     const handleSave = (e) => {
-      //getPlayers();
-      
-      // setData({
-      //   userId: localStorage.getItem('profile') || null,
-      //   track: actualMusic,
-      //   previewUrl: playing
-      // });
 
+      //getPlayers();
+
+      setData({
+        userId: localStorage.getItem('profile') || null,
+        track: actualMusic,
+        previewUrl: playing
+      });
+
+      console.log(useData)
+
+      postPlayers(useData)
 
     }
   
