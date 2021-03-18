@@ -36,6 +36,9 @@ import React, {
     };
   
     const handleMusic = () => {
+      console.log(playing)
+      console.log(actualMusic)
+
       setPlay(!play);
     };
   

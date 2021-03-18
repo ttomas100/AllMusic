@@ -9,6 +9,7 @@ const IconPlay = styled(FontAwesomeIcon)`
   cursor: pointer;
   flex: 1;
   transition: all ease 0.3s;
+  margin: 12px
 `;
 
 const PlayButton = (props) => (

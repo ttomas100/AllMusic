@@ -1,10 +1,8 @@
 import React from 'react';
-import {
-    render
-} from 'react-dom'
+import {render} from 'react-dom'
 import Root from './routes'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUserCircle, faChevronLeft, faPlayCircle, faPauseCircle } from '@fortawesome/free-solid-svg-icons'
+import { faUserCircle, faChevronLeft, faPlayCircle, faPauseCircle, faSave} from '@fortawesome/free-solid-svg-icons'
 
 
 render( <
@@ -12,4 +10,4 @@ render( <
     document.getElementById('root')
 );
 
-library.add(faUserCircle, faChevronLeft, faPlayCircle, faPauseCircle);
+library.add(faUserCircle, faChevronLeft, faPlayCircle, faPauseCircle, faSave);

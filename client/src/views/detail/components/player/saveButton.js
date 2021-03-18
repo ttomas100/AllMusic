@@ -5,14 +5,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const IconSave = styled(FontAwesomeIcon)`
   font-size: ${theme.fontSizes.title};
-  color: ${theme.colors.primary};
+  color: #4B0082;
   cursor: pointer;
   flex: 1;
   transition: all ease 0.1s;
+  margin: 12px
 `;
 
 const SaveButton = (props) => (
-  <IconSave icon={props.play ? "pause-circle" : "play-circle"} onClick={() => props.onClick()}/>
+  <IconSave icon={props.save ? "save" : "save"} onClick={() => props.onClick()}/>
 );
 
 export default SaveButton;
