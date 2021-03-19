@@ -14,7 +14,7 @@ import React, {
   import Spinner from '../../components/spinner'
 
 
-  import { loadPlayers, postPlayers } from '../../api/crudApi'
+  import { postPlayers } from '../../api/crudApi'
   
   const Detail = (props) => {
     const [spotify, isLoading, setAlbum] = useAlbum();
@@ -23,16 +23,7 @@ import React, {
     const [volume, setVolume] = useState(0.5);
     const [playing, setPlaying] = useState('');
     const [actualMusic, setActualMusic] = useState('');
-    const [usePlayers, setPlayers] = useState([]);
 
-    const [useData, setData] = useState({});
-
-    const getPlayers = async () => {
-      const response = await loadPlayers();
-
-      console.log(response);
-      setPlayers(response);
-    };
 
     useEffect(() => {
       setAlbum(props.match.params.artist);
@@ -41,6 +32,7 @@ import React, {
     }, []);
   
     const handlePlayMusic = (trackSelected) => {
+
       if(!track.music || track.music.length === 0) {
         setMusic(trackSelected.id);
       }
@@ -59,18 +51,18 @@ import React, {
     };
 
     const handleSave = (e) => {
+     
+  
 
-      //getPlayers();
-
-      setData({
+      let playTrack = {
         userId: localStorage.getItem('profile') || null,
         track: actualMusic,
         previewUrl: playing
-      });
+      };
 
-      console.log(useData)
+      console.log(playTrack)
 
-      postPlayers(useData)
+      postPlayers(playTrack)
 
     }
   
@@ -99,16 +91,11 @@ import React, {
                                   playing={playing} 
                                   play={play} 
                                   volume={volume} 
-                                  onClick={() => handleMusic()} 
+                                  onClick={handleMusic} 
+                                  onSave={handleSave}
                                   onChange={(e) => handleChangeVolume(e) }/>
           }
-      
-          {
-            <Player 
-
-              onClick={() => handleSave()} 
-              />
-          }
+    
 
         </Content>
       </Container>

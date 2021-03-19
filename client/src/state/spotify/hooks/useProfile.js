@@ -7,9 +7,14 @@ const useProfile = () => {
   const [{spotify}, dispatch] = useStateValue();
   const [isLoading, setIsLoading] = useState(false);
 
+
   const setProfile = (profile) => {
+
+    localStorage.removeItem('profile');
     const prof = localStorage.getItem('profile') || null;
+
     if (!prof) {
+
       localStorage.setItem('profile', profile)
     }
   };
@@ -21,12 +26,16 @@ const useProfile = () => {
 
     if (response) {
 
+
       const { email } = response;
+
+      console.log(email)
 
       setProfile(email);
 
       dispatch(listProfile(response))
     } else {
+      console.log('false')
       const err = [];
       dispatch(listProfile(err))
     }

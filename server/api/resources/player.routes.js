@@ -1,22 +1,15 @@
 const express = require ('express')
 const playerController = require("./player.controller")
 const trackRouter = express.Router()
-const track =
-{
-    "userId":"ttomas100@live.com",
-    "track": "cachito",
-    "previewUrl":"https://p.scdn.co/mp3-preview/a05a3a25fc7837fd9a86fe9af99aa7054594c55a?cid=5241c782aa824632850c999b3047a904" 
-    
-  }
 
-trackRouter.route('/')
-.get((req, res) => {
-    res.json(track)});
+// trackRouter.route('/')
+// .get((req, res) => {
+//     res.json(track)});
 
 trackRouter.post('/',(req, res)=>{
     playerController.createPlayer(req.body)
     .then(track =>{
-        console.log('done')
+
         res.status(201).send('ok')
     })
     .catch(err => {
@@ -25,15 +18,15 @@ trackRouter.post('/',(req, res)=>{
     })
 })
 
-trackRouter.get('/', (req, res) => {
-    return playerController.getTracks()
-    .then(track => {
-      res.json(track)
-    })
-})
+// trackRouter.get('/', (req, res) => {
+//     return playerController.getTracks()
+//     .then(track => {
+//       res.json(track)
+//     })
+// })
 
 trackRouter.get('/:userId', (req, res) => {
-    return playerController.getByUser(userId)
+    return playerController.getByUser(req.params.userId)
     .then(track => {
       res.json(track)
     })

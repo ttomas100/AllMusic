@@ -12,8 +12,12 @@ const IconSave = styled(FontAwesomeIcon)`
   margin: 12px
 `;
 
+
+
 const SaveButton = (props) => (
   <IconSave icon={props.save ? "save" : "save"} onClick={() => props.onClick()}/>
 );
+
+
 
 export default SaveButton;

@@ -15,9 +15,9 @@ function playerGetById(id){
     return player.findById(id)
 }
 
-function getByUser(userId){    
+function  getByUser(userId) {    
     
-    return player.find({userId: userId})
+    return player.find({userId});
 }
 
 function deleteTrack(id){
