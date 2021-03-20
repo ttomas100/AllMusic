@@ -10,7 +10,7 @@ app.use('/track', trackRouter)
 const PORT = process.env.PORT || 3001;
 
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static('../../client/build'));
+    app.use(express.static('./client/build'));
   }
 
 mongoose.connect(process.env.MONGODB_URI|| 'mongodb://127.0.0.1:27017/musicTrack')
