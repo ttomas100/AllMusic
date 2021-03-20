@@ -28,7 +28,6 @@ Mongoose
 Node.js (Javascript environment)
 
 
-
 ## Getting Started
 
 ### Prerequisites
