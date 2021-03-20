@@ -50,6 +50,7 @@ const Profile = (props) => {
           </tr> 
           )
         }
+        
         </table>
       </Content>
     </Container>

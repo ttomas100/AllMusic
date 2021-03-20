@@ -2,9 +2,6 @@ const express = require ('express')
 const playerController = require("./player.controller")
 const trackRouter = express.Router()
 
-// trackRouter.route('/')
-// .get((req, res) => {
-//     res.json(track)});
 
 trackRouter.post('/',(req, res)=>{
     playerController.createPlayer(req.body)
@@ -18,12 +15,6 @@ trackRouter.post('/',(req, res)=>{
     })
 })
 
-// trackRouter.get('/', (req, res) => {
-//     return playerController.getTracks()
-//     .then(track => {
-//       res.json(track)
-//     })
-// })
 
 trackRouter.get('/:userId', (req, res) => {
     return playerController.getByUser(req.params.userId)
