@@ -7,6 +7,9 @@ A Full stack MERN project that serves as a personal media library to keep track 
 
 https://github.com/ttomas100/AllMusic
 
+# Live App
+https://safe-fjord-70446.herokuapp.com
+
 ### Result:
 
 In this application is we utilized the Dezeer API to implement a search for music. Ultimately, PML allows the user to keep a list of music they want to listen. Once the song is selected, the song is appended to the user page
