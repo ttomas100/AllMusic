@@ -13,7 +13,14 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static('./client/build'));
   }
 
-mongoose.connect(process.env.MONGODB_URI|| 'mongodb://127.0.0.1:27017/musicTrack')
+mongoose.connect(process.env.MONGODB_URI|| 'mongodb://127.0.0.1:27017/musicTrack',
+{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 mongoose.connection.on('error', () =>{
     console.log('Mongo connection fail')
     process.exit(1)
