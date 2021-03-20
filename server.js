@@ -25,6 +25,6 @@ app.get('/', (req, res)=> {
 })
 
 app.listen(PORT,() =>{
-    console.log('done')
+    console.log('ok')
 })
 
